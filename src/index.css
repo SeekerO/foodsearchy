@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.textColor {
+  @apply text-[#F5E7B2];
+}
+.textColorRed {
+  @apply text-[#973131];
+}
+
+.bgMainColor {
+  @apply bg-[#973131];
+}
+
+.bgSecondColor {
+  @apply bg-[#E0A75E] bg-opacity-20;
+}
