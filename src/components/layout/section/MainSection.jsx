@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect } from "react";
 import Router from "../../router/router";
 import { Suspense } from "react";
 import { ring2 } from "ldrs";
+import { ToastContainer } from "react-toastify";
 
 ring2.register();
 
@@ -26,6 +27,7 @@ const MainSection = () => {
       >
         <Router />
       </Suspense>
+      <ToastContainer />
     </div>
   );
 };

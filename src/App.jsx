@@ -1,6 +1,8 @@
 import Header from "./components/layout/header/Header";
 import MainSection from "./components/layout/section/MainSection";
 import Footer from "./components/layout/footer/Footer";
+import { ToastContainer } from "react-toastify";
+
 function App() {
   return (
     <div className="flex flex-col w-screen h-screen  text-black overflow-y-auto overflow-x-hidden">

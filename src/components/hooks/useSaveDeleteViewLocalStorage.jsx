@@ -1,3 +1,5 @@
+import { NotifySuccess, NotifyError } from "../utils/notify";
+
 export default function useSaveDeleteViewLocalStorage(saveItem, param) {
   // parameters:
   // save = saveItem
@@ -11,6 +13,7 @@ export default function useSaveDeleteViewLocalStorage(saveItem, param) {
     savedItems.meals.push(item);
 
     localStorage.setItem("savedItem", JSON.stringify(savedItems));
+    NotifySuccess("Item Saved");
   };
 
   const deleteItemFromLocalStorage = (item) => {
@@ -21,6 +24,7 @@ export default function useSaveDeleteViewLocalStorage(saveItem, param) {
         (meal) => meal.idMeal !== item
       );
       localStorage.setItem("savedItem", JSON.stringify(savedItems));
+      NotifyError("Item Deleted");
     }
   };
 
