@@ -10,7 +10,7 @@ export function NotifySuccess(message) {
       pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "light",
       transition: Slide,
     });
   success();
@@ -26,7 +26,7 @@ export function NotifyError(message) {
       pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "light",
       transition: Slide,
     });
   error();
@@ -42,7 +42,7 @@ export function NotifyWarning(message) {
       pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "light",
       transition: Slide,
     });
   warning();
