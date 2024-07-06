@@ -51,7 +51,7 @@ const ItemView = ({
           />
         </div>
         <div className="flex flex-col gap-2">
-          <div className="font-bold text-[30px] flex items-center gap-2 textColorRed ">
+          <div className="font-bold text-[30px] flex items-center gap-2 textColorRed flex-wrap ">
             <span className=""> {clickedMeal.strMeal}</span>
 
             {!view && (

@@ -36,20 +36,23 @@ const ItemDisplayLayout = ({ setscountSavedMeal, countSavedMeal }) => {
   return (
     <div className="h-full w-full flex ">
       <div className="w-full h-full shadow-md rounded-md bg-slate-100 flex ">
-        <div className="h-full w-[300px] rounded-l-md px-2 flex flex-col">
-          <h1 className="text-[25px] textColorRed font-bold">MEALS</h1>
-          <div className="w-full text-black flex bg-slate-200 p-1 items-center gap-2 rounded-md group focus:shadow-md focus:shadow-black">
-            <IoSearch className="text-[30px] ml-2 textColorRed" />
-            <input
-              onChange={(e) => setsearchInput(e.target.value)}
-              value={searchInput}
-              type="search"
-              placeholder="Search Receipe Here.."
-              className="px-2 rounded-md py-2 w-full bg-slate-200 outline-none group-focus:shadow-md  "
-            />
-          </div>
-        </div>
         <div className="h-full w-full flex flex-col border-l-2 px-2 py-2 border-gray-200  ">
+          {clickedMeal === null && (
+            <div className="w-[300px] rounded-l-md px-2 flex flex-col">
+              <h1 className="text-[25px] textColorRed font-bold">MEALS</h1>
+              <div className="w-full text-black flex bg-slate-200 p-1 items-center gap-2 rounded-md group focus:shadow-md focus:shadow-black">
+                <IoSearch className="text-[30px] ml-2 textColorRed" />
+                <input
+                  onChange={(e) => setsearchInput(e.target.value)}
+                  value={searchInput}
+                  type="search"
+                  placeholder="Search Receipe Here.."
+                  className="px-2 rounded-md py-2 w-full bg-slate-200 outline-none group-focus:shadow-md  "
+                />
+              </div>
+            </div>
+          )}
+
           <div
             className={`${
               isAnimate ? "overflow-hidden" : "overflow-y-auto"
