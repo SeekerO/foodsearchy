@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useSaveLocalStorage from "../../../hooks/useSaveDeleteViewLocalStorage";
+
 import { IoSearch } from "react-icons/io5";
 import useSearch from "../../../hooks/useSearch";
 import { fetchMealById } from "../../../utils/fetchData";
@@ -9,7 +9,8 @@ import Lottie from "lottie-react";
 import ItemView from "../../../utils/ItemView";
 import { MdDelete } from "react-icons/md";
 import useSaveDeleteViewLocalStorage from "../../../hooks/useSaveDeleteViewLocalStorage";
-const SavedItems = ({ countSavedMeal }) => {
+
+const SavedItems = ({ setscountSavedMeal, countSavedMeal }) => {
   const [searchInput, setsearchInput] = useState("");
   const [savedData, setSavedData] = useState([]);
   const [clickedMeal, setclickedMeal] = useState(null);
@@ -17,7 +18,7 @@ const SavedItems = ({ countSavedMeal }) => {
 
   const searchedData = useSearch(savedData.meals, searchInput);
   useEffect(() => {
-    setSavedData(useSaveLocalStorage("", "view"));
+    setSavedData(useSaveDeleteViewLocalStorage("", "view"));
   }, []);
 
   const getMealByID = (id) => {
@@ -39,7 +40,8 @@ const SavedItems = ({ countSavedMeal }) => {
 
   const remove = (id) => {
     useSaveDeleteViewLocalStorage(id, "delete");
-    setSavedData(useSaveLocalStorage("", "view"));
+    setSavedData(useSaveDeleteViewLocalStorage("", "view"));
+    setscountSavedMeal(!countSavedMeal);
   };
   return (
     <div className="px-4 py-2 w-full h-full bg-slate-100">

@@ -17,7 +17,15 @@ const Router = ({ setscountSavedMeal, countSavedMeal }) => {
   return (
     <Routes>
       <Route exact path="/" element={<Categories />} />
-      <Route path="/saveditems" element={<SavedItems />} />
+      <Route
+        path="/saveditems"
+        element={
+          <SavedItems
+            setscountSavedMeal={setscountSavedMeal}
+            countSavedMeal={countSavedMeal}
+          />
+        }
+      />
       <Route
         path="/:id"
         element={
