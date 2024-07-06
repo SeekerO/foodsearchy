@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 
@@ -13,12 +13,20 @@ const ItemDisplay = lazy(() =>
   import("../layout/section/itemDisplay/ItemDisplayLayout")
 );
 
-const Router = () => {
+const Router = ({ setscountSavedMeal, countSavedMeal }) => {
   return (
     <Routes>
       <Route exact path="/" element={<Categories />} />
       <Route path="/saveditems" element={<SavedItems />} />
-      <Route path="/:id" element={<ItemDisplay />} />
+      <Route
+        path="/:id"
+        element={
+          <ItemDisplay
+            setscountSavedMeal={setscountSavedMeal}
+            countSavedMeal={countSavedMeal}
+          />
+        }
+      />
       <Route element={<Display404 />} />
       <Route path="*" element={<Categories />} />
     </Routes>

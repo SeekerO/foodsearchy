@@ -9,7 +9,7 @@ import animateLottie from "../../../lottie/animate.json";
 import Lottie from "lottie-react";
 import useRenderMeals from "../../../hooks/useRenderMeals";
 
-const ItemDisplayLayout = () => {
+const ItemDisplayLayout = ({ setscountSavedMeal, countSavedMeal }) => {
   const RenderMeals = useRenderMeals();
   const [clickedMeal, setclickedMeal] = useState(null);
   const [searchInput, setsearchInput] = useState("");
@@ -98,6 +98,8 @@ const ItemDisplayLayout = () => {
                   clickedMeal={clickedMeal}
                   setclickedMeal={setclickedMeal}
                   setAnimate={setAnimate}
+                  setscountSavedMeal={setscountSavedMeal}
+                  countSavedMeal={countSavedMeal}
                 />
               )}
             </Suspense>

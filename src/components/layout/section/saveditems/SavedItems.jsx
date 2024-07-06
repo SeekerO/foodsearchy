@@ -9,7 +9,7 @@ import Lottie from "lottie-react";
 import ItemView from "../../../utils/ItemView";
 import { MdDelete } from "react-icons/md";
 import useSaveDeleteViewLocalStorage from "../../../hooks/useSaveDeleteViewLocalStorage";
-const SavedItems = () => {
+const SavedItems = ({ countSavedMeal }) => {
   const [searchInput, setsearchInput] = useState("");
   const [savedData, setSavedData] = useState([]);
   const [clickedMeal, setclickedMeal] = useState(null);

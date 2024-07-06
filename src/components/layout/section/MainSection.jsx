@@ -7,7 +7,7 @@ ring2.register();
 
 // Default values shown
 
-const MainSection = () => {
+const MainSection = ({ countSavedMeal, setscountSavedMeal }) => {
   return (
     <div className="h-full w-full bg-slate-200 flex">
       <Suspense
@@ -24,7 +24,10 @@ const MainSection = () => {
           </div>
         }
       >
-        <Router />
+        <Router
+          countSavedMeal={countSavedMeal}
+          setscountSavedMeal={setscountSavedMeal}
+        />
       </Suspense>
       <ToastContainer />
     </div>

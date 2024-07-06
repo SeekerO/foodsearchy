@@ -4,7 +4,14 @@ import { BsSave } from "react-icons/bs";
 import { FaRuler } from "react-icons/fa";
 import useSaveDeleteViewLocalStorage from "../hooks/useSaveDeleteViewLocalStorage";
 
-const ItemView = ({ clickedMeal, setclickedMeal, setAnimate, view }) => {
+const ItemView = ({
+  clickedMeal,
+  setclickedMeal,
+  setAnimate,
+  view,
+  setscountSavedMeal,
+  countSavedMeal,
+}) => {
   const ingredientsArray = Object.keys(clickedMeal)
     .filter((key) => key.startsWith("strIngredient"))
     .map((key) => clickedMeal[key])
@@ -50,7 +57,8 @@ const ItemView = ({ clickedMeal, setclickedMeal, setAnimate, view }) => {
             {!view && (
               <div
                 onClick={() =>
-                  useSaveDeleteViewLocalStorage(clickedMeal, "save")
+                  useSaveDeleteViewLocalStorage(clickedMeal, "save") ||
+                  setscountSavedMeal(!countSavedMeal)
                 }
                 className="flex items-center font-semibold mb-5 hover:text-blue-500 cursor-pointer mr-5 gap-1 text-[15px] group"
               >
